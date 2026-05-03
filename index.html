@@ -24,7 +24,6 @@
             margin: 0 auto;
         }
 
-        /* Хедер */
         .header {
             background: #11131c;
             border: 1px solid #2a2f3f;
@@ -59,7 +58,6 @@
             font-size: 14px;
         }
 
-        /* Кнопки */
         button {
             background: #1e1f2e;
             border: 1px solid #2a2f3f;
@@ -84,7 +82,6 @@
             color: #f87171;
         }
 
-        /* Модалки */
         .modal {
             display: none;
             position: fixed;
@@ -139,7 +136,6 @@
             display: none;
         }
 
-        /* Браузеры */
         .browsers-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -184,7 +180,6 @@
             padding: 8px 16px;
             color: white;
             cursor: pointer;
-            font-size: 13px;
         }
 
         .browser-frame {
@@ -194,7 +189,6 @@
             background: #0f1119;
         }
 
-        /* Стримы */
         .section-header {
             display: flex;
             justify-content: space-between;
@@ -299,7 +293,7 @@
     <div id="serverModal" class="modal active">
         <div class="modal-content">
             <h2>🔌 Подключение к серверу</h2>
-            <input type="text" id="serverInput" placeholder="АДРЕС:ПОРТ">
+            <input type="text" id="serverInput" placeholder="АДРЕС">
             <button id="connectBtn" class="primary" style="width:100%">Подключиться</button>
             <div id="serverError" class="error-text"></div>
         </div>
@@ -316,7 +310,7 @@
         </div>
     </div>
 
-    <!-- ОСНОВНАЯ ПАНЕЛЬ УПРАВЛЕНИЯ -->
+    <!-- ОСНОВНАЯ ПАНЕЛЬ -->
     <div id="mainPanel" class="hidden">
         <div class="browsers-section">
             <div class="browser-card">
@@ -517,7 +511,7 @@
         }
     }
 
-    // ========== ОТПРАВКА КОМАНД ==========
+    // ========== КОМАНДЫ ==========
     async function sendCommand(cmd) {
         if (!currentTelegramId || !API_URL) return;
         
@@ -551,7 +545,7 @@
         }
     }
 
-    // ========== ОТРИСОВКА СТРИМОВ ==========
+    // ========== ОТРИСОВКА ==========
     function formatUptime(seconds) {
         const hours = Math.floor(seconds / 3600);
         const minutes = Math.floor((seconds % 3600) / 60);
